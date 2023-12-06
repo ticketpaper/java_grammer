@@ -49,6 +49,7 @@ public class C02Variable {
         System.out.println("my_char = " + my_char);
 
 //        boolean : true(1), false(0)
+//        기본값 : false
         boolean my_bool = true;
         System.out.println("my_bool = " + my_bool);
 
@@ -63,8 +64,11 @@ public class C02Variable {
         int ch1_num = ch1;
         System.out.println("'a' to int : " + ch1_num);
 
-        int my_int1 = 10;
+//        char형 알파벳을 비교하면 묵시적 타입 변환을 함
+        System.out.println('A'>'a');
+
 //        int -> double
+        int my_int1 = 10;
         double my_double1 = my_int1;
         System.out.println("10 to double : " + my_double1);
 //      에러 발생 :  my_int1 = my_double1;

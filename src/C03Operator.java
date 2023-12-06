@@ -50,8 +50,26 @@ public class C03Operator {
         System.out.println(result2);
         System.out.println(!result2);
 
-//        비트 연산자 &
+//        비트 연산자 & (AND) : 둘다 1일때 1반환
+//        5: 0000101 6: 0000110
+        int n1 = 5, n2 = 6;
+        System.out.println(n1 & n2);
+//        비트 연산자 | (OR) : 둘중하나가 1이면 1반환
+        System.out.println(n1 | n2);
+//        비트 연산자 ^ (XOR) : 둘이 같지않으면 1반환
+        System.out.println(n1 ^ n2);
 
+//        시프트 연산자 <<, >> : 곱셈, 나눗셈 가능
+        System.out.println(n1 << 1);
 
+        int a= 13; // 13 : 00001101
+        int b = 9; // 9  : 00001001
+
+        while(b!=0){
+            int same = a & b; // AND 연산으로 구한 carry 생성
+            a = a ^ b; // XOR 연산으로 구한 비트값 a에 할당
+            b = same << 1;
+        }
+        System.out.println(a);
     }
 }
