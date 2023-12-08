@@ -110,12 +110,24 @@ public class C05LoopStatements {
 //            }
 //        }
 
-//        2중 for문을 통해 배열접근
-        int[][] arr = {{1, 2, 3, 4}, {5, 6, 7, 8}};
-        for(int i=0; i<arr.length; i++){
-            for(int j=0; j<arr[i].length; j++){
-                System.out.print(arr[i][j] + " ");
-            }
-        }
+////        2중 for문을 통해 배열접근
+//        int[][] arr = {{1, 2, 3, 4}, {5, 6, 7, 8}};
+//        for(int i=0; i<arr.length; i++){
+//            for(int j=0; j<arr[i].length; j++){
+//                System.out.print(arr[i][j] + " ");
+//            }
+
+//        라벨문
+//        loop1:
+//        for (int i = 0; i < 5; i++) {
+//            loop2:
+//            for (int j = 0; j < 5; j++) {
+//                System.out.println("hello world");
+//                if (j == 2) {
+//                    break loop1;
+//                }
+//            }
+//        }
+
     }
 }
