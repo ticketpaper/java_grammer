@@ -85,10 +85,10 @@ public class C07String {
 //        }
 //        System.out.println(count);
 
-////        substring(a,b) : a이상 b미만의 index를 자른다.
-//        String st1 = "hello world";
-//        System.out.println(st1.substring(0,5));
-//        System.out.println(st1.substring(6,st1.length()));
+//        substring(a,b) : a이상 b미만의 index를 자른다.
+        String st1 = "hello world";
+        System.out.println(st1.substring(0,5));
+        System.out.println(st1.substring(6,st1.length()));
 
 ////        문자열 더하기
 //        String a = "hello";
@@ -171,23 +171,23 @@ public class C07String {
 //        System.out.println(arr_str);
 
 //        StringBuffer는 문자열을 추가하거나 변경할때 주로 사용하는 객체
-        String st1= "hello";
-        StringBuffer sb = new StringBuffer(st1);
-//        append : 문자열 마지막에 추가대상 문자열을 추가
-        sb.append(" world");
-//        insert : 특정 n번째 위치에 원하는 문자열을
-        sb.insert(6, "java "); // 0으로 지정하면 맨앞에 넣음
-//        substring  : String 자료형의 substring메소드와 동일하게 사용
-        System.out.println(sb.substring(6, 10));
-//        delete(int start, int end): start부터 end만큼 삭제
-        sb.delete(6,11);
-        String new_str = sb.toString();
-        System.out.println(new_str);
+//        String st1= "hello";
+//        StringBuffer sb = new StringBuffer(st1);
+////        append : 문자열 마지막에 추가대상 문자열을 추가
+//        sb.append(" world");
+////        insert : 특정 n번째 위치에 원하는 문자열을
+//        sb.insert(6, "java "); // 0으로 지정하면 맨앞에 넣음
+////        substring  : String 자료형의 substring메소드와 동일하게 사용
+//        System.out.println(sb.substring(6, 10));
+////        delete(int start, int end): start부터 end만큼 삭제
+//        sb.delete(6,11);
+//        String new_str = sb.toString();
+//        System.out.println(new_str);
 
-//        String < StringBuffer < StringBuilder(스레드 safe X)
-        StringBuilder sb2 = new StringBuilder(st1);
-        sb2.append(" world");
-        System.out.println(sb2.indexOf("o"));
-        System.out.println(sb2);
+////        String < StringBuffer < StringBuilder(스레드 safe X)
+//        StringBuilder sb2 = new StringBuilder(st1);
+//        sb2.append(" world");
+//        System.out.println(sb2.indexOf("o"));
+//        System.out.println(sb2);
     }
 }
