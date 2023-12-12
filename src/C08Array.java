@@ -170,6 +170,7 @@ public class C08Array {
 ////        배열의 검색
 //        int[] arr = {5, 2, 3, 1, 8, 7};
 
+//        logn은 2로 나눈다?
 ////        이진검색(Binary Search)
 ////        사전에 오름차순 정렬이 되어있어야 이진검색 가능
 //        Arrays.sort(arr);

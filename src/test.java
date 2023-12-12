@@ -1,52 +1,49 @@
 import java.util.*;
 
 public class test {
-//      numbers	    result
-//      [2,1,3,4,1]	[2,3,4,5,6,7]
-//      [5,0,2,7]	[2,5,7,9,12]
+// players : ["mumu", "soe", "poe", "kai", "mine"]
+// callings : ["kai", "kai", "mine", "mine"]
+// result : ["mumu", "kai", "mine", "soe", "poe"]
     public static void main(String[] args) {
-        int[] numbers = {2, 1, 3, 4, 1};
-        int index = 0, index2 = 0;
-        Arrays.sort(numbers);
-        System.out.println(Arrays.toString(numbers));
-
-        int[] temp = new int[numbers.length*numbers.length];
-        for (int i = 0; i < numbers.length-1; i++) {
-            for (int j = i + 1; j < numbers.length; j++) {
-                temp[index]= numbers[i]+numbers[j];
-                index++;
-            }
-        }
-        System.out.println(Arrays.toString(temp));
-        int[] temp_ans = Arrays.copyOfRange(temp, 0, index);
-        Arrays.sort(temp_ans);
-        System.out.println(Arrays.toString(temp_ans));
-
-        int[] temp_answer = new int[temp_ans.length];
-        for (int i = 0; i < temp_ans.length - 1; i++) {
-            if (temp_ans[i] != temp_ans[i + 1]) {
-                temp_answer[index2] = temp_ans[i];
-                index2++;
-            }
-        }
-        temp_answer[index2++] = temp_ans[temp_ans.length - 1];
-        int[] answer = Arrays.copyOfRange(temp_answer, 0, index2);
-        System.out.println(Arrays.toString(answer));
-
-
-//        int[] numbers_combi = new int[numbers.length * numbers.length];
-//        int combi_cnt = 0;
-//        for (int i = 0; i < numbers.length - 1; i++) {
-//            for (int j = i + 1; j < numbers.length; j++) {
-//                numbers_combi[combi_cnt] = numbers[i]+numbers[j];
-//                combi_cnt++;
+//        String[] players = {"mumu", "soe", "poe", "kai", "mine"};
+////                             1등   2등      3등    4등     5등
+//        String[] callings = {"kai", "kai", "mine", "mine"};
+////                         "mumu", "soe", "kai", "poe", "mine"
+////                         "mumu", "kai", "soe", "poe", "mine"
+////                         "mumu", "kai", "soe", "mine", "poe"
+////                         "mumu", "kai", "mine", "soe", "poe"
+//
+//        List<String> player_list = new ArrayList<>(Arrays.asList(players));
+//        for (String calling : callings) {
+//            int callingIndex = player_list.indexOf(calling);
+//            int originalIndex = callingIndex - 1;
+//
+//            if (originalIndex >= 0) {
+//                player_list.remove(calling);
+//                player_list.add(originalIndex, calling);
 //            }
 //        }
-//        int[] temp2 = Arrays.copyOfRange(numbers_combi, 0, combi_cnt);
-//        System.out.println(Arrays.toString(temp2));
+//        String[] answer = player_list.toArray(new String[]{});
+//        System.out.println(Arrays.toString(answer));
 
-
-
+//        array	                result
+//        [1, 2, 3, 3, 3, 4]	3
+        int[] array = {1, 2, 3, 3,3,4};
+            int[] checker = new int[1001];
+            int answer = 0, max =0;
+            for (int i = 0; i < array.length; i++) {
+                checker[array[i]]++;
+            }
+            for (int i = 0; i < checker.length; i++) {
+                if (max < checker[i]) {
+                    max=checker[i];
+                    answer = i;
+                }else if (max == checker[i]) {
+                    answer = -1;
+                }
+            }
+        System.out.println(Arrays.toString(checker));
+        System.out.println(answer);
     }
 }
 
