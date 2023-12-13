@@ -48,58 +48,75 @@ public class C10Map {
 //            System.out.println(iter.next());
 //        }
 
-//        아래의 list를 가지고 좋아하는 운동종목과 사람 숫자를 map형태로 나타내시오
-        List<String> mylist = new ArrayList<>();
-        mylist.add("basketball");
-        mylist.add("basketball");
-        mylist.add("basketball");
-        mylist.add("baseball");
-        mylist.add("baseball");
-        mylist.add("tennis");
-        mylist.add("tennis");
-        mylist.add("tennis");
-        Map<String,Integer> myMap = new HashMap<>();
-        for (String s : mylist) {
-//            if (myMap.containsKey(s)) {
-//                myMap.put(s, myMap.get(s)+1);
+////        아래의 list를 가지고 좋아하는 운동종목과 사람 숫자를 map형태로 나타내시오
+//        List<String> mylist = new ArrayList<>();
+//        mylist.add("basketball");
+//        mylist.add("basketball");
+//        mylist.add("basketball");
+//        mylist.add("baseball");
+//        mylist.add("baseball");
+//        mylist.add("tennis");
+//        mylist.add("tennis");
+//        mylist.add("tennis");
+//        Map<String,Integer> myMap = new HashMap<>();
+//        for (String s : mylist) {
+////            if (myMap.containsKey(s)) {
+////                myMap.put(s, myMap.get(s)+1);
+////            } else {
+////                myMap.put(s, 1);
+////            }
+//            myMap.put(s, myMap.getOrDefault(s, 0) + 1);
+//        }
+//        for (String s : myMap.keySet()) {
+//            System.out.println(s+"을(를) 좋아하는 사람은 "+myMap.get(s)+"명 입니다.");
+//        }
+
+
+////          participant	                            completion	                    return
+////          ["leo", "kiki", "eden"]	                ["eden", "kiki"]	            "leo"
+////          ["mislav", "stanko", "mislav", "ana"]	["stanko", "ana", "mislav"]	    "mislav"
+//
+//        String[] participant ={"mislav", "stanko", "mislav", "ana"};
+//        String[] completion = {"stanko", "mislav", "ana"};
+//
+//        Map<String, Integer> map = new HashMap<>();
+//        for (String p : participant) {
+//            if (map.containsKey(p)) {
+//                map.put(p, map.get(p)+1);
 //            } else {
-//                myMap.put(s, 1);
+//                map.put(p, 1);
 //            }
-            myMap.put(s, myMap.getOrDefault(s, 0) + 1);
-        }
+//        }
+//        System.out.println(map);
+//        for (String s : completion) {
+//            if (map.get(s) == 1) {
+//                map.remove(s);
+//            } else {
+//                map.put(s, map.get(s)-1);
+//            }
+//        }
+//
+//        System.out.println(map);
+//        String answer = map.keySet().iterator().next();
+//        System.out.println(answer);
 
+//        LinkedHashMap : 데이터 삽입순서 유지
+        Map<String, Integer> myMap1 = new LinkedHashMap<>();
+        myMap1.put("hello5", 1);
+        myMap1.put("hello4", 1);
+        myMap1.put("hello3", 1);
+        myMap1.put("hello2", 1);
+        myMap1.put("hello1", 1);
+        System.out.println(myMap1);
 
-//          participant	                            completion	                    return
-//          ["leo", "kiki", "eden"]	                ["eden", "kiki"]	            "leo"
-//          ["mislav", "stanko", "mislav", "ana"]	["stanko", "ana", "mislav"]	    "mislav"
-
-        String[] participant ={"mislav", "stanko", "mislav", "ana"};
-        String[] completion = {"stanko",  "mislav"};
-
-        Map<String, Integer> map = new HashMap<>();
-        for (String p : participant) {
-            if (map.containsKey(p)) {
-                map.put(p, map.get(p)+1);
-            } else {
-                map.put(p, 1);
-            }
-        }
-        for (String s : completion) {
-            if (map.get(s) == 1) {
-                map.remove(s);
-            } else {
-                map.put(s, map.get(s)-1);
-            }
-        }
-
-        System.out.println(map);
-        String[] answer = new String[map.size()];
-        int count=0;
-        for (String s : map.keySet()) {
-            answer[count] = s;
-            count++;
-        }
-        System.out.println(Arrays.toString(answer));
+//        TreeMap : key를 통해 데이터 정렬 (오름차순)
+        Map<String, Integer> myMap2 = new TreeMap<>();
+        myMap2.put("hello5", 1);
+        myMap2.put("hello4", 1);
+        myMap2.put("hello2", 1);
+        myMap2.put("hello3", 1);
+        myMap2.put("hello1", 1);
+        System.out.println(myMap2);
 
     }
 }
