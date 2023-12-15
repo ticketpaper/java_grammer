@@ -1,9 +1,8 @@
 import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
 
-public class C12StackQueue {
+public class C12StackQueueDeque {
     public static void main(String[] args) {
-////        후입선출 (LIFO), 가장 나중에 저장된 데이터가 먼저 인출되는 자료구조
+////       Stack 후입선출 (LIFO), 가장 나중에 저장된 데이터가 먼저 인출되는 자료구조
 //        Stack<Integer> myStk = new Stack<>();
 //        myStk.push(10);
 //        myStk.push(20);
@@ -66,7 +65,7 @@ public class C12StackQueue {
 // --------------------------------------------------------------------
 
 ////          Queue 선언 : 선입선출 (FIFO)
-//        Queue<Integer> myQue = new LinkedList<>();
+//        Queue<Integer> myQue = new LinkedList<>(); // 보편적인 방법
 //        myQue.add(10);
 //        myQue.add(20);
 //        myQue.add(30);
@@ -95,7 +94,7 @@ public class C12StackQueue {
 
 ////        우선순위큐
 ////        데이터가 큐에 들어갈 때마다 부분적으로 정렬(재조정)되어 큐의 최상단에는 가장 작은값(또는 가장 큰값)이 위치
-////        힙구조라 정렬안됨
+////        힙 자료구조 구현, heapify
 //        Queue<Integer> pq = new PriorityQueue<>();
 //        pq.add(30);
 //        pq.add(20);
@@ -108,29 +107,45 @@ public class C12StackQueue {
 //            System.out.println(pq.poll());
 //        }
 
-//        더 맵게 (힙)
-        int[] scoville = {1, 2, 3, 9, 10, 12};
-        int K = 7;
-        int answer = 0;
-        Queue<Integer> mix = new PriorityQueue<>();
-        for (int i : scoville) {
-            mix.add(i);
-        }
-        while(true){
-            if (mix.size() == 1) {
-                answer = -1;
-                break;
-            }
-            if (mix.peek() >= K) {
-                break;
-            }
-            mix.add(mix.poll() + mix.poll() * 2);
-            answer++;
-            if (mix.peek() >= K) {
-                break;
-            }
-        }
-        System.out.println(mix);
-        System.out.println(answer);
+////        더 맵게 (힙)
+//        int[] scoville = {1, 2, 3, 9, 10, 12};
+//        int K = 7;
+//        int answer = 0;
+//        Queue<Integer> mix = new PriorityQueue<>();
+//        for (int i : scoville) {
+//            mix.add(i);
+//        }
+//        while(true){
+//            if (mix.size() == 1) {
+//                answer = -1;
+//                break;
+//            }
+//            if (mix.peek() >= K) {
+//                break;
+//            }
+//            mix.add(mix.poll() + mix.poll() * 2);
+//            answer++;
+//            if (mix.peek() >= K) {
+//                break;
+//            }
+//        }
+//        System.out.println(mix);
+//        System.out.println(answer);
+
+// --------------------------------------------------------------------
+
+//        Deque
+//        ArrayDeque는 양방향에서 데이터를 삽입/제거 가능하다. 성능이 좋음
+        Deque<Integer> myDeq = new ArrayDeque<>();
+        myDeq.addFirst(123); // 앞에 넣음
+        myDeq.addFirst(456);
+        myDeq.addLast(789); // 뒤에 넣음
+        System.out.println(myDeq);
+        System.out.println(myDeq.pollFirst()); // 앞에서 뽑음
+        System.out.println(myDeq.pollLast()); // 뒤에서 뽑음
+        System.out.println(myDeq);
+
+//        컨베이어 벨트 문제
+
     }
 }
