@@ -6,40 +6,41 @@ public class test {
 // callings : ["kai", "kai", "mine", "mine"]
 // result : ["mumu", "kai", "mine", "soe", "poe"]
     public static void main(String[] args) {
-        String[] players = {"mumu", "soe", "poe", "kai", "mine"};
-//                             1등   2등      3등    4등     5등
-        String[] callings = {"kai", "kai", "mine", "mine"};
-//                         "mumu", "soe", "kai", "poe", "mine"
-//                         "mumu", "kai", "soe", "poe", "mine"
-//                         "mumu", "kai", "soe", "mine", "poe"
-//                         "mumu", "kai", "mine", "soe", "poe"
-        int pcount = 1;
-        String[] answer = new String[players.length];
-        Map<String, Integer> p_map = new LinkedHashMap<>();
-        Map<Integer, String> rev_map = new LinkedHashMap<>();
-        for (String s : players) {
-            p_map.put(s, pcount);
-            rev_map.put(pcount, s);
-            pcount++;
-        }
-        for (String call : callings) {
-            String s_temp= "";
-            Integer i_temp = 0;
+//        String[] players = {"mumu", "soe", "poe", "kai", "mine"};
+////                             1등   2등      3등    4등     5등
+//        String[] callings = {"kai", "kai", "mine", "mine"};
+////                         "mumu", "soe", "kai", "poe", "mine"
+////                         "mumu", "kai", "soe", "poe", "mine"
+////                         "mumu", "kai", "soe", "mine", "poe"
+////                         "mumu", "kai", "mine", "soe", "poe"
+//        int pcount = 1;
+//        String[] answer = new String[players.length];
+//        Map<String, Integer> p_map = new LinkedHashMap<>();
+//        Map<Integer, String> rev_map = new LinkedHashMap<>();
+//        for (String s : players) {
+//            p_map.put(s, pcount);
+//            rev_map.put(pcount, s);
+//            pcount++;
+//        }
+//        for (String call : callings) {
+//            String s_temp= "";
+//            Integer i_temp = 0;
+//
+//            i_temp = p_map.get(call)-1; // call 앞에 있는 선수 등수
+//            s_temp = rev_map.get(p_map.get(call)-1); // call 앞에 있는 선수 이름
+//            p_map.put(call, p_map.get(call) - 1);
+//            p_map.put(s_temp, i_temp + 1);
+//            rev_map.put(p_map.get(call), call);
+//            // 불러진 선수의 변경된 값 넣기
+//            rev_map.put(i_temp+1, s_temp);
+//            // 불려진 선수의 앞에 있는애 순위 조절
+//        }
+//        int index = 0;
+//        for (String value : rev_map.values()) {
+//            answer[index]=value;
+//            index++;
+//        }
 
-            i_temp = p_map.get(call)-1; // call 앞에 있는 선수 등수
-            s_temp = rev_map.get(p_map.get(call)-1); // call 앞에 있는 선수 이름
-            p_map.put(call, p_map.get(call) - 1);
-            p_map.put(s_temp, i_temp + 1);
-            rev_map.put(p_map.get(call), call);
-            // 불러진 선수의 변경된 값 넣기
-            rev_map.put(i_temp+1, s_temp);
-            // 불려진 선수의 앞에 있는애 순위 조절
-        }
-        int index = 0;
-        for (String value : rev_map.values()) {
-            answer[index]=value;
-            index++;
-        }
 
 
 
@@ -86,6 +87,25 @@ public class test {
 ////        ["119", "97674223", "1195524421"]	    false
 //        String[] phone_book = {"119", "97674223", "1195524421"};
 
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        List<List<Integer>> combi2 = new ArrayList<>();
+        List<Integer> temp2 = new ArrayList<>();
+        int n = 2, start = 0;
+        combi(list,combi2,temp2,n,start);
+        System.out.println(combi2);
+    }
+
+    static void combi(List<Integer> list, List<List<Integer>> combi, List<Integer> temp, int n, int start) {
+        if (temp.size() == n) {
+            combi.add(new ArrayList<>(temp));
+            return; // 직전 호출 자리로
+        }
+        for (int i = start; i < list.size(); i++) {
+            temp.add(list.get(i));
+            combi(list, combi, temp, n, i + 1);
+            temp.remove(temp.size() - 1);
+            System.out.printf("%d번째 입니다.",i);
+        }
     }
 }
 
