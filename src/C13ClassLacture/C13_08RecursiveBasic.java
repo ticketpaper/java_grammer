@@ -19,6 +19,7 @@ public class C13_08RecursiveBasic {
             first = second;
             second = third;
         }
+        System.out.println(fac(10));
 
         System.out.println(Fibonacci(10));
 
