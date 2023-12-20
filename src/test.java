@@ -87,25 +87,35 @@ public class test {
 ////        ["119", "97674223", "1195524421"]	    false
 //        String[] phone_book = {"119", "97674223", "1195524421"};
 
-        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-        List<List<Integer>> combi2 = new ArrayList<>();
-        List<Integer> temp2 = new ArrayList<>();
-        int n = 2, start = 0;
-        combi(list,combi2,temp2,n,start);
-        System.out.println(combi2);
-    }
+//        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+//        List<List<Integer>> combi2 = new ArrayList<>();
+//        List<Integer> temp2 = new ArrayList<>();
+//        int n = 2, start = 0;
+//        combi(list,combi2,temp2,n,start);
+//        System.out.println(combi2);
 
-    static void combi(List<Integer> list, List<List<Integer>> combi, List<Integer> temp, int n, int start) {
-        if (temp.size() == n) {
-            combi.add(new ArrayList<>(temp));
-            return; // 직전 호출 자리로
-        }
-        for (int i = start; i < list.size(); i++) {
-            temp.add(list.get(i));
-            combi(list, combi, temp, n, i + 1);
-            temp.remove(temp.size() - 1);
-            System.out.printf("%d번째 입니다.",i);
-        }
+        int[] answers = {1, 3, 2, 4, 2};
+        List<Integer> stu1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+        List<Integer> stu2 = new ArrayList<>(Arrays.asList(2, 1, 2, 3, 2, 4, 2, 5));
+        List<Integer> stu3 = new ArrayList<>(Arrays.asList(3, 3, 1, 1, 2, 2, 4, 4, 5, 5));
+
+
     }
+static int count1, count2, count3;
+
+//    static void combi(List<Integer> list, List<List<Integer>> combi, List<Integer> temp, int n, int start) {
+//        if (temp.size() == n) {
+//            combi.add(new ArrayList<>(temp));
+//            return; // 직전 호출 자리로
+//        }
+//        for (int i = start; i < list.size(); i++) {
+//            temp.add(list.get(i));
+//            combi(list, combi, temp, n, i + 1);
+//            temp.remove(temp.size() - 1);
+//            System.out.printf("%d번째 입니다.",i);
+//        }
+//    }
+
 }
+
 
