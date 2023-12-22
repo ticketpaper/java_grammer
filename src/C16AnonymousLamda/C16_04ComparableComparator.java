@@ -33,8 +33,7 @@ public class C16_04ComparableComparator {
 //        studentList.add(new Student("더락", 13));
 //        studentList.add(new Student("언더테이커", 10));
 //        studentList.add(new Student("빅쇼", 12));
-//
-//        System.out.println(studentList);
+
 
 //        방법1. Comparator를 익명객체 방식으로 활용하여 정렬 (매개변수 2개)
 //        studentList.sort(new Comparator<Student>() {
