@@ -2,6 +2,7 @@ package C18ExcetionFileParsing.AuthorException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 class AuthorRepository {
     List<Author> authorList;
@@ -18,7 +19,12 @@ class AuthorRepository {
         return authorList;
     }
 
-
-
-
+    Optional<Author> checkemail(String email) {
+        for (Author author : authorList) {
+            if (author.getEmail().equals(email)) {
+                return Optional.of(author);
+            }
+        }
+        return Optional.empty();
+    }
 }

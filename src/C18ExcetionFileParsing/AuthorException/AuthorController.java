@@ -26,25 +26,22 @@ class AuthorController {
                 Author author = new Author(name, email, password);
                 try {
                     authorService.resister(author);
+                    System.out.printf("사용자의 id: %d, 이름: %s \n", author.getId(), author.getName());
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
-                System.out.printf("사용자의 id: %d, 이름: %s \n", author.getId(), author.getName());
             } else if (i == 2) { // 로그인
                 System.out.println("login email : ");
                 String email = sc.next();
                 System.out.println("login password : ");
                 String password = sc.next();
-                Optional<Author> login_author = Optional.empty();
                 try {
-                    login_author = authorService.login(email, password);
+                    Author login_author = authorService.login(email, password);
+                    System.out.println(login_author.getName() + "님 환영합니다.");
                 } catch (NoSuchElementException e) {
                     System.out.println(e.getMessage());
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
-                }
-                if (login_author.isPresent()) {
-                    System.out.println(login_author.get().getName() + "님 환영합니다.");
                 }
             }
         }
