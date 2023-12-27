@@ -1,6 +1,6 @@
-package C16EtcClass;
+package C17EtcClass;
 
-public class C16_01Math {
+public class C17_01Math {
     public static void main(String[] args) {
 //        for (int i = 0; i < 10; i++) {
 //            // 0.0 부터 1.0미만의 임의 double형을 반환

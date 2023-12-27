@@ -22,7 +22,7 @@ public class C16_05StreamAPI1 {
 //
 //        Arrays.stream(str).sorted((s1, s2) -> s1.toLowerCase().compareTo(s2.toLowerCase())).forEach(a-> System.out.println(a));
 //        Arrays.stream(arr).sorted().forEach(a -> System.out.println(a));
-
+//
 ////        스트림의 생성
 //        String[] strArr = {"HTML", "CSS", "JAVA", "PYTHON"};
 ////        stream<객체> : 제네릭타입으로 stream객체가 생성
@@ -44,7 +44,7 @@ public class C16_05StreamAPI1 {
 //        int[] intArr = {10, 20, 30, 40, 50};
 //        int answer = Arrays.stream(intArr).distinct().sum();
 //        System.out.println(answer);
-//
+
 //        String[] strArr = {"java", "java", "python", "C++"};
 ////        중복 제거후 새로운 배열 생성
 //        String[] strArr2 = Arrays.stream(strArr).distinct().toArray(String[]::new);
@@ -53,7 +53,7 @@ public class C16_05StreamAPI1 {
 ////        mapToInt를 통해 IntStream으로 변환
 //        IntStream myStream = Arrays.stream(strArr).distinct().filter(a -> a.length() <= 3).mapToInt(a -> a.length());
 
-//        sorted: 정렬된 스트림반환
+////        sorted: 정렬된 스트림반환
 //        int[] intArr = {4, 1, 2, 3, 6, 7};
 ////        내림차순 정렬된 숫자 신규 배열 반환
 //        int[] intArr2 = Arrays.stream(intArr).sorted().toArray();
