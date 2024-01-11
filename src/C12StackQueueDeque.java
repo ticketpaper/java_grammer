@@ -92,20 +92,20 @@ public class C12StackQueueDeque {
 //        myQue.offer("hello4");
 //        System.out.println(myQue);
 
-////        우선순위큐
-////        데이터가 큐에 들어갈 때마다 부분적으로 정렬(재조정)되어 큐의 최상단에는 가장 작은값(또는 가장 큰값)이 위치
-////        힙 자료구조 구현, heapify
-//        Queue<Integer> pq = new PriorityQueue<>();
-//        pq.add(30);
-//        pq.add(20);
-//        pq.add(10);
-//        pq.add(50);
-//        pq.add(30);
-//        pq.add(40);
-//        System.out.println(pq);
-//        while (!pq.isEmpty()) {
-//            System.out.println(pq.poll());
-//        }
+//        우선순위큐
+//        데이터가 큐에 들어갈 때마다 부분적으로 정렬(재조정)되어 큐의 최상단에는 가장 작은값(또는 가장 큰값)이 위치
+//        힙 자료구조 구현, heapify
+        Queue<Integer> pq = new PriorityQueue<>();
+        pq.add(30);
+        pq.add(20);
+        pq.add(10);
+        pq.add(50);
+        pq.add(30);
+        pq.add(40);
+        System.out.println(pq);
+        while (!pq.isEmpty()) {
+            System.out.println(pq.poll());
+        }
 
 ////        더 맵게 (힙)
 //        int[] scoville = {1, 2, 3, 9, 10, 12};
@@ -134,16 +134,16 @@ public class C12StackQueueDeque {
 
 // --------------------------------------------------------------------
 
-//        Deque
-//        ArrayDeque는 양방향에서 데이터를 삽입/제거 가능하다. 성능이 좋음
-        Deque<Integer> myDeq = new ArrayDeque<>();
-        myDeq.addFirst(123); // 앞에 넣음
-        myDeq.addFirst(456);
-        myDeq.addLast(789); // 뒤에 넣음
-        System.out.println(myDeq);
-        System.out.println(myDeq.pollFirst()); // 앞에서 뽑음
-        System.out.println(myDeq.pollLast()); // 뒤에서 뽑음
-        System.out.println(myDeq);
+////        Deque
+////        ArrayDeque는 양방향에서 데이터를 삽입/제거 가능하다. 성능이 좋음
+//        Deque<Integer> myDeq = new ArrayDeque<>();
+//        myDeq.addFirst(123); // 앞에 넣음
+//        myDeq.addFirst(456);
+//        myDeq.addLast(789); // 뒤에 넣음
+//        System.out.println(myDeq);
+//        System.out.println(myDeq.pollFirst()); // 앞에서 뽑음
+//        System.out.println(myDeq.pollLast()); // 뒤에서 뽑음
+//        System.out.println(myDeq);
 
 //        컨베이어 벨트 문제
 

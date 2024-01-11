@@ -94,10 +94,19 @@ public class test {
 //        combi(list,combi2,temp2,n,start);
 //        System.out.println(combi2);
 
-        int[] answers = {1, 3, 2, 4, 2};
-        List<Integer> stu1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-        List<Integer> stu2 = new ArrayList<>(Arrays.asList(2, 1, 2, 3, 2, 4, 2, 5));
-        List<Integer> stu3 = new ArrayList<>(Arrays.asList(3, 3, 1, 1, 2, 2, 4, 4, 5, 5));
+//        int[] answers = {1, 3, 2, 4, 2};
+//        List<Integer> stu1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+//        List<Integer> stu2 = new ArrayList<>(Arrays.asList(2, 1, 2, 3, 2, 4, 2, 5));
+//        List<Integer> stu3 = new ArrayList<>(Arrays.asList(3, 3, 1, 1, 2, 2, 4, 4, 5, 5));
+
+        String st1 = "hello java";
+        String st2 = st1.replaceAll("java", "python");
+        System.out.println(st2);
+        System.out.println(st2.toUpperCase());
+        String joined = String.join( "-", st1,st2,st1);
+        System.out.println(joined);
+
+        int length = st1.length();
 
 
     }
